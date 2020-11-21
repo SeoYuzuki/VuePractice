@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import HelloWorld from "../HelloWorld.vue";
-import finBar from "../finBar.vue";
+import finTestinOrder from "../finTestinOrder.vue";
 import finTest from "../finTest.vue";
 import finEthics from "../finEthics.vue";
 import TestPage from "../TestPage.vue";
@@ -28,7 +28,7 @@ const router = new VueRouter({
       children: [{
         path: 'finTestH',
         name: 'finTestH',
-        component: finBar
+        component: finTestinOrder
       },
       {
         path: 'finTestT',
