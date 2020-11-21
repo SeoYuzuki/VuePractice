@@ -1,9 +1,6 @@
 <template>
   <div class="hello">
-    yoyo123
-    <div>安裝cli: npm install -g @vue/cli</div>
-    <div>建立專案: vue create myproj</div>
-    <div>改port: npm run serve -- --port 3000</div>
+    道德
   </div>
 </template>
 

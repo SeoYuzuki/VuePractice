@@ -2,9 +2,9 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import HelloWorld from "../HelloWorld.vue";
-import HelloWorld2 from "../HelloWorld2.vue";
+import finBar from "../finBar.vue";
 import finTest from "../finTest.vue";
-import HelloWorld3 from "../HelloWorld3.vue";
+import finEthics from "../finEthics.vue";
 import TestPage from "../TestPage.vue";
 import finTestMock100 from "../finTestMock100.vue";
 
@@ -28,7 +28,7 @@ const router = new VueRouter({
       children: [{
         path: 'finTestH',
         name: 'finTestH',
-        component: HelloWorld2
+        component: finBar
       },
       {
         path: 'finTestT',
@@ -37,15 +37,11 @@ const router = new VueRouter({
       },
       ],
     },
-    {
-      path: '/a',
-      name: 'aname',
-      component: HelloWorld2
-    },
+
     {
       path: '/b',
       name: 'bname',
-      component: HelloWorld3
+      component: finEthics
     },
     {
 

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <img style="width: 50px;" alt="Vue logo" src="./assets/logo.png" />
 
     <Banner msg="Welcome to Your Vue.js App" />
     <router-view></router-view>
@@ -8,15 +8,11 @@
 </template>
 
 <script>
-//import HelloWorld from "./components/HelloWorld.vue"; // <HelloWorld msg="Welcome to Your Vue.js App" />
-//import HelloWorld2 from "./components/HelloWorld2.vue";
 import Banner from "./components/Banner.vue";
 
 export default {
   name: "App",
   components: {
-    //HelloWorld,
-    //HelloWorld2,
     Banner,
   },
   props: {},

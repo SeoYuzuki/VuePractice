@@ -3,51 +3,48 @@
     <div class="opSet">
       <form>
         <div>{{ question }}</div>
-        <div ref="ref1">
+
+        <label :for="this.$vnode.key + '_1'" class="op_label" ref="ref1">
           <input
             type="radio"
-            :id="opid + '_1'"
+            :id="this.$vnode.key + '_1'"
             name="op"
             value="1"
             v-model="picked"
-          />
-          <label :for="opid + '_1'">{{ op1 }}</label>
-          <br />
-        </div>
-        <div ref="ref2">
+          />{{ op1 }}
+        </label>
+
+        <label :for="this.$vnode.key + '_2'" class="op_label" ref="ref2">
           <input
             type="radio"
-            :id="opid + '_2'"
+            :id="this.$vnode.key + '_2'"
             name="op"
             value="2"
             v-model="picked"
-          />
-          <label :for="opid + '_2'">{{ op2 }}</label>
-          <br />
-        </div>
-        <div ref="ref3">
+          />{{ op2 }}
+        </label>
+
+        <label :for="this.$vnode.key + '_3'" class="op_label" ref="ref3">
           <input
             type="radio"
-            :id="opid + '_3'"
+            :id="this.$vnode.key + '_3'"
             name="op"
             value="3"
             v-model="picked"
-          />
-          <label :for="opid + '_3'">{{ op3 }}</label>
-          <br />
-        </div>
-        <div ref="ref4">
+          />{{ op3 }}
+        </label>
+
+        <label :for="this.$vnode.key + '_4'" class="op_label" ref="ref4">
           <input
             type="radio"
-            :id="opid + '_4'"
+            :id="this.$vnode.key + '_4'"
             name="op"
             value="4"
             v-model="picked"
-          />
-          <label :for="opid + '_4'">{{ op4 }}</label>
-          <br />
-        </div>
+          />{{ op4 }}
+        </label>
       </form>
+      
       <br />
     </div>
   </div>
@@ -55,6 +52,7 @@
 
 <script>
 import { globalMethods1 } from "./globalMethods.js";
+// {{this.$vnode.key}} 取得該元件被設定的key
 
 export default {
   mixins: [globalMethods1],
@@ -62,7 +60,7 @@ export default {
   props: {
     ops: null,
     isShowAns: null,
-    opid: null,
+    
   },
 
   data() {
@@ -73,7 +71,7 @@ export default {
       op3: null,
       op4: null,
       someHtml: null,
-      picked: null,
+      picked: null, // 被選的元件
     };
   },
 
@@ -133,13 +131,19 @@ a {
 .op {
   background-color: rgb(215, 253, 241);
 }
-.op:hover {
-  background-color: #8aff7f;
-}
 
 .hello {
   background-color: #f5e6c5;
   text-align: justify;
+}
+
+.op_label {
+  display: flex;
+  width: 500px;
+  background-color: #ffffff;
+}
+.op_label:hover {
+  background-color: #d3e8f1;
 }
 
 #info {

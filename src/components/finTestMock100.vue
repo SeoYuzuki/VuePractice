@@ -17,8 +17,8 @@
       :key="field.id"
       :ops="field.ops"
       :isShowAns="isShowAns"
-      :opid="field.id"
     ></component>
+    
   </div>
 </template>
 
@@ -31,8 +31,6 @@ import finTest_op from "./finTest_op.vue";
 export default {
   mixins: [globalMethods1],
   components: {
-    //HelloWorld,
-    //HelloWorld2,
     finTest_op,
   },
   name: "HelloWorld2",
@@ -45,10 +43,7 @@ export default {
       fields: [],
       isShowAns: true,
       question: null,
-      op1: null,
-      op2: null,
-      op3: null,
-      op4: null,
+
       count: 0,
     };
   },
