@@ -3,7 +3,7 @@
     <img style="width: 50px;" alt="Vue logo" src="./assets/logo.png" />
 
     <Banner msg="Welcome to Your Vue.js App" />
-    <router-view></router-view>
+    
   </div>
 </template>
 

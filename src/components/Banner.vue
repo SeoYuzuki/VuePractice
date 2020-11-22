@@ -24,7 +24,7 @@
       </li>
       <button v-on:click="greet">測試用按鈕2</button>
     </div>
-    
+    <router-view></router-view>
   </div>
 </template>
 
