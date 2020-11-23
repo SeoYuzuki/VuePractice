@@ -4,50 +4,59 @@
     <div>安裝cli: npm install -g @vue/cli</div>
     <div>建立專案: vue create myproj</div>
     <div>改port: npm run serve -- --port 3000</div>
-    <h1>site : {{ site }}</h1>
-    <h1>url : {{ url }}</h1>
-    <h1>{{ details() }}</h1>
-    <h1>{{ cap }}</h1>
-    <button v-on:click="greet3">測試用按鈕3</button>
-    <button v-on:click="greet4">測試用按鈕4</button>
+    <br />
+    <div>非同步get練習</div>
+    <button v-on:click="axios1">測試axios1</button>
+    <button v-on:click="axios2">測試axios2</button>
+    <button v-on:click="axios3">測試axios3</button>
+    <div v-html="wikiTxt"></div>
   </div>
 </template>
 
 <script>
-const vm = {
+export default {
   data() {
     return {
-      site: "hihi",
-      url: "yoyoyo",
-      alexa: "10000",
-      cap: "",
+      wikiTxt: "",
     };
   },
   created: function () {},
   methods: {
-    details: function () {
-      return this.site + " - function！";
-    },
-    greet3: function () {
-      //非同步get req
-      console.log("33");
+    axios1: function () {
+      this.hihi();
+      console.log("axios1");
       this.axios
         .get("https://api.coindesk.com/v1/bpi/currentprice.json")
-        .then((response) => (this.cap = response));
+        .then((response) => (this.wikiTxt = response["data"]["time"]));
     },
-    greet4: function () {
-      console.log("45");
-  
+    axios2: function () {
+      console.log("axios2");
+
       const url = "api/testV";
       //const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
       this.axios.get(url).then((response) => {
-        console.log(response['data']);
+        this.wikiTxt = response["data"];
+        //console.log(response["data"]);
       });
+    },
+    axios3: function () {
+      console.log("axios3");
+
+      const url = "https://zh.wikipedia.org/wiki/Wiki";
+      const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
+      this.axios.get(cors + url).then((response) => {
+        console.log("??");
+        console.log(response);
+        this.wikiTxt = response["data"];
+      });
+    },
+    hihi: function () {
+      let mmm = "me";
+      var ss = `foo ${mmm} bar`;
+      console.log(ss);
     },
   },
 };
-
-export default vm;
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
