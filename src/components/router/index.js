@@ -5,8 +5,11 @@ import HelloWorld from "../HelloWorld.vue";
 import finTestinOrder from "../finTestinOrder.vue";
 import finTest from "../finTest.vue";
 import finEthics from "../finEthics.vue";
-import TestPage from "../TestPage.vue";
 import finTestMock100 from "../finTestMock100.vue";
+
+import testMainPage from "../testMainPage.vue";
+import testAxios from "../testAxios.vue";
+
 
 Vue.use(VueRouter);
 
@@ -39,15 +42,23 @@ const router = new VueRouter({
     },
 
     {
-      path: '/b',
-      name: 'bname',
+      path: '/finEthics',
+      name: 'finEthics',
       component: finEthics
     },
+
     {
 
-      path: '/test',
-      name: 'testPage',
-      component: TestPage
+      path: '/testMainPage',
+      name: 'testMainPage',
+      component: testMainPage,
+      children: [{
+        path: 'testAxios',
+        name: 'testAxios',
+        component: testAxios
+      },
+
+      ],
     },
 
   ]

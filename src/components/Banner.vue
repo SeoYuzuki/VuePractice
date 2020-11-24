@@ -14,12 +14,12 @@
       </li>
       <li>
         <div class="div1" ref="ref3">
-          <router-link to="/b">道德 </router-link>
+          <router-link to="/finEthics">道德 </router-link>
         </div>
       </li>
       <li>
         <div class="div1" ref="ref4">
-          <router-link to="/test">測試 </router-link>
+          <router-link to="/TestMainPage">測試 </router-link>
         </div>
       </li>
       <button v-on:click="greet">測試用按鈕2</button>
