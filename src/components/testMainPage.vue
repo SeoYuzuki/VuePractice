@@ -1,15 +1,18 @@
 <template>
   <div class="hello">
     test
-    <div>安裝cli: npm install -g @vue/cli</div>
-    <div>建立專案: vue create myproj</div>
-    <div>改port: npm run serve -- --port 3000</div>
-    <br />
-    <div>非同步get練習</div>
-    <button v-on:click="axios1">測試axios1</button>
-    <button v-on:click="axios2">測試axios2</button>
-    <button v-on:click="axios3">測試axios3</button>
-    <div v-html="wikiTxt"></div>
+
+    <div style="display: inline-block; margin: 0 10px">
+      <router-link to="/TestMainPage/testAxios">testAxios</router-link>
+    </div>
+    <div style="display: inline-block; margin: 0 10px">
+      <router-link to="/TestMainPage/testAxios">testAxios!</router-link>
+    </div>
+    <div>
+      <div class="card" style="width: 30rem">
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -32,10 +35,10 @@ export default {
     axios2: function () {
       console.log("axios2");
 
-      const url = "api/testV";
+      const url = "http://10.214.141.45:5000/testV";
       //const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
       this.axios.get(url).then((response) => {
-        this.wikiTxt = response["data"];
+        this.wikiTxt = response;
         //console.log(response["data"]);
       });
     },
