@@ -22,7 +22,7 @@
 <style scoped>
 .hello {
   background-color: rgb(245, 230, 197);
-  text-align: justify;
+ 
 }
 </style>
 

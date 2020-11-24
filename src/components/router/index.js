@@ -9,6 +9,7 @@ import finTestMock100 from "../finTestMock100.vue";
 
 import testMainPage from "../testMainPage.vue";
 import testAxios from "../testAxios.vue";
+import testImage from "../testImage.vue";
 
 
 Vue.use(VueRouter);
@@ -57,7 +58,11 @@ const router = new VueRouter({
         name: 'testAxios',
         component: testAxios
       },
-
+      {
+        path: 'testImage',
+        name: 'testImage',
+        component: testImage
+      },
       ],
     },
 

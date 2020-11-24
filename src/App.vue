@@ -20,7 +20,9 @@ export default {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    greet: function () {},
+  },
   watch: {},
   beforeCreate() {},
   created() {},

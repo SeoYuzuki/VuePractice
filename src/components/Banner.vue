@@ -80,14 +80,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+<style scoped>
 li,
 #BannerText {
   display: inline-block;
@@ -99,19 +92,15 @@ li,
   border-top-style: solid;
   border-color: rgb(10, 10, 61);
   color: rgb(0, 0, 0);
-  margin:0px;
+  margin: 0px;
 }
 
 .div1 {
   width: 100px;
   background-color: rgb(200, 191, 226);
-  border-bottom: none ;
+  border-bottom: none;
   border-color: rgb(10, 10, 61);
   margin: 0;
-}
-
-a {
-  color: #000000;
 }
 
 .red_color {
