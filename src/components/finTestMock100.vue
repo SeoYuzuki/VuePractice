@@ -1,7 +1,11 @@
 <template>
   <div>
     <br />
-    <div id="info">100題 寫完交卷ㄅ</div>
+    <div class="info">
+      <div>我想考</div>
+      <input id="num2" v-model="testNumber" />
+      <div>題 寫完交卷ㄅ</div>
+    </div>
 
     <br />
     <br />
@@ -42,11 +46,13 @@ export default {
       isShowAns: true,
       question: null,
 
-      count: 0,
+      idcount: 0,
+      testNumber: 10,
     };
   },
 
   created: function () {},
+  watch: {},
 
   methods: {
     addFormElement: function () {
@@ -54,16 +60,17 @@ export default {
 
       this.isShowAns = true;
       let i = 0;
-      let hash = Math.floor(Math.random() * 10000); // 要是不加這個hash id, clean雖然依舊生效, 但畫面無法如期更新
-      for (; i < 10; i++) {
+
+      for (; i < this.testNumber; i++) {
         let index = Math.floor(Math.random() * qList.length);
         console.log(index);
         this.fields.push({
           type: finTest_op,
           ops: qList[index],
-          id: hash + "id" + i,
+          id: this.idcount + "id" + i,
         });
       }
+      this.idcount = this.idcount + 1; // 要是不加這個hash id, clean雖然依舊生效, 但畫面無法如期更新
     },
 
     submitTest: function () {
@@ -86,14 +93,22 @@ export default {
   background-color: rgb(138, 255, 127);
 }
 
-#info {
-  text-align: center;
-}
-
 #test {
   display: inline-block;
   vertical-align: middle;
+}
 
+.info {
+  display: inline-block;
+}
+
+.info div {
+  display: inline-block;
+}
+
+.info input {
+  display: inline-block;
+  width: 30px;
 }
 </style>
 

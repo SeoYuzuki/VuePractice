@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import App2 from './App2.vue'
 
 import router from './components/router/index.js'
 import axios from 'axios'
@@ -22,3 +23,10 @@ new Vue({
   render: h => h(App),
   router,
 }).$mount('#app')
+
+new Vue({
+  render: h => h(App2),
+  router,
+}).$mount('#app2')
+
+

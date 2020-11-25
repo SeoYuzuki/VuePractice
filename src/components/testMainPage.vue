@@ -8,6 +8,9 @@
     <div style="display: inline-block; margin: 0 10px">
       <router-link to="/TestMainPage/testImage">testImage!</router-link>
     </div>
+    <div style="display: inline-block; margin: 0 10px">
+      <router-link to="/TestMainPage/testComputed">testComputed!</router-link>
+    </div>
     <div>
       <div class="card" style="width: 30rem">
         <router-view></router-view>

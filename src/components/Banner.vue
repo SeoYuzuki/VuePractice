@@ -106,7 +106,7 @@ li,
 .red_color {
   background-color: red;
 }
-.pur_color {
+.pur_color {  
   background-color: rgb(200, 191, 226);
 }
 </style>
