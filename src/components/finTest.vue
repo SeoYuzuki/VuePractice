@@ -4,7 +4,7 @@
       <router-link to="/finTest/finTestH">逐題考</router-link>
     </div>
     <div style="display: inline-block;margin: 0 10px;">
-      <router-link to="/finTest/finTestT">模擬考100題!</router-link>
+      <router-link to="/finTest/finTestT">模擬考10題!</router-link>
     </div>
     <div>
       <div class="card" style="width: 30rem">
@@ -22,7 +22,7 @@
 <style scoped>
 .hello {
   background-color: rgb(245, 230, 197);
-  text-align: justify;
+ 
 }
 </style>
 

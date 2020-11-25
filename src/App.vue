@@ -3,7 +3,7 @@
     <img style="width: 50px" alt="Vue logo" src="./assets/logo.png" />
     yoyo2
     <Banner msg="Welcome to Your Vue.js App" />
-    <footer>fo</footer>
+    <footer s>fo</footer>
   </div>
 </template>
 
@@ -13,14 +13,16 @@ import Banner from "./components/Banner.vue";
 export default {
   name: "App",
   components: {
-    Banner,
+    Banner
   },
   props: {},
   data() {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    greet: function() {}
+  },
   watch: {},
   beforeCreate() {},
   created() {},
@@ -31,7 +33,7 @@ export default {
   beforeUpdate() {},
   updated() {},
   beforeDestroy() {},
-  destroyed() {},
+  destroyed() {}
 };
 </script>
 
@@ -42,6 +44,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px;  
 }
 </style>
