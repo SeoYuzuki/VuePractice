@@ -1,25 +1,17 @@
 <template>
-  <div id="app2">
-    second app
-  </div>
+  <div id="app2">second app</div>
 </template>
 
 <script>
-
-
 export default {
   name: "App2",
-  components: {
-    
-  },
+  components: {},
   props: {},
   data() {
     return {};
   },
   computed: {},
-  methods: {
-    
-  },
+  methods: {},
   watch: {},
   beforeCreate() {},
   created() {},
@@ -30,10 +22,9 @@ export default {
   beforeUpdate() {},
   updated() {},
   beforeDestroy() {},
-  destroyed() {}
+  destroyed() {},
 };
 </script>
 
 <style scoped>
-
 </style>
