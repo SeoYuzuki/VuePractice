@@ -11,6 +11,9 @@
     <div style="display: inline-block; margin: 0 10px">
       <router-link to="/TestMainPage/testComputed">testComputed and watch!</router-link>
     </div>
+    <div style="display: inline-block; margin: 0 10px">
+      <router-link to="/TestMainPage/testStore">testStore!</router-link>
+    </div>
     <div>
       <div class="card" style="width: 30rem">
         <router-view></router-view>

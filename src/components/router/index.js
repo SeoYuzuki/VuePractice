@@ -1,16 +1,18 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import HelloWorld from "../HelloWorld.vue";
-import finTestinOrder from "../finTestinOrder.vue";
-import finTest from "../finTest.vue";
-import finEthics from "../finEthics.vue";
-import finTestMock100 from "../finTestMock100.vue";
+import HelloWorld from "@/components/HelloWorld.vue";
+import finTestinOrder from "@/components/fin/finTestinOrder.vue";
+import finTest from "@/components/fin/finTest.vue";
+import finEthics from "@/components/fin/finEthics.vue";
+import finTestMock100 from "@/components/fin/finTestMock100.vue";
 
-import testMainPage from "../testMainPage.vue";
-import testAxios from "../testAxios.vue";
-import testImage from "../testImage.vue";
-import testComputed from "../testComputed.vue";
+import testMainPage from "@/components/test/testMainPage.vue";
+import testAxios from "@/components/test/testAxios.vue";
+import testImage from "@/components/test/testImage.vue";
+import testComputed from "@/components/test/testComputed.vue";
+import testStore from "@/components/test/testStore.vue";
+
 
 Vue.use(VueRouter);
 
@@ -67,6 +69,11 @@ const router = new VueRouter({
         path: 'testComputed',
         name: 'testComputed',
         component: testComputed
+      },
+      {
+        path: 'testStore',
+        name: 'testStore',
+        component: testStore
       },
       ],
     },

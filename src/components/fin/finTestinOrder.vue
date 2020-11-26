@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import { qList } from "./sss.js";
-import { globalMethods1 } from "./globalMethods.js";
+import { qList } from "@/components/fin/sss.js";
+import { globalMethods1 } from "@/components/fin/globalMethods.js";
 var ans = "";
 var index = "";
 

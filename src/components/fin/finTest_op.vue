@@ -51,11 +51,9 @@
 </template>
 
 <script>
-import { globalMethods1 } from "./globalMethods.js";
 // {{this.$vnode.key}} 取得該元件被設定的key
 
 export default {
-  mixins: [globalMethods1],
   name: "HelloWorld2",
   props: {
     ops: null,

@@ -27,9 +27,9 @@
 
 <script>
 //<finTest_op op1="Welcome to Your Vue.js App" />
-import { qList } from "./sss.js";
-import { globalMethods1 } from "./globalMethods.js";
-import finTest_op from "./finTest_op.vue";
+import { qList } from "@/components/fin/sss.js";
+import { globalMethods1 } from "@/components/fin/globalMethods.js";
+import finTest_op from "@/components/fin/finTest_op.vue";
 
 export default {
   mixins: [globalMethods1],

@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import Banner from "./components/Banner.vue";
+import Banner from "@/components/Banner.vue";
 
 export default {
   name: "App",
   components: {
-    Banner
+    Banner,
   },
   props: {},
   data() {
@@ -21,7 +21,7 @@ export default {
   },
   computed: {},
   methods: {
-    greet: function() {}
+    greet: function () {},
   },
   watch: {},
   beforeCreate() {},
@@ -33,7 +33,7 @@ export default {
   beforeUpdate() {},
   updated() {},
   beforeDestroy() {},
-  destroyed() {}
+  destroyed() {},
 };
 </script>
 
@@ -44,6 +44,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;  
+  margin-top: 60px;
 }
 </style>
