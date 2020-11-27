@@ -24,7 +24,9 @@
       </li>
       <button v-on:click="greet">測試用按鈕2</button>
     </div>
-    <router-view></router-view>
+    <transition mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -77,6 +79,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped src='@/assets/commonStyle.css'></style>
 <style scoped>
 li,
 #BannerText {
@@ -106,5 +109,7 @@ li,
 .pur_color {
   background-color: rgb(200, 191, 226);
 }
+
+
 </style>
 

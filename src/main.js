@@ -21,6 +21,21 @@ Vue.component('Apple', {//需調整config
   }
 })
 
+Vue.component('buttonCounter', {
+  template: '<button v-on:click="incrementHandler">{{ counter }}</button>',
+  data: function () {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    incrementHandler: function () {
+      this.counter += 1
+      this.$emit('increment')
+    }
+  },
+});
+
 new Vue({
   render: h => h(App),
   router,

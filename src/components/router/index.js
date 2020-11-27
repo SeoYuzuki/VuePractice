@@ -2,16 +2,22 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import HelloWorld from "@/components/HelloWorld.vue";
-import finTestinOrder from "@/components/fin/finTestinOrder.vue";
+//金融常識
 import finTest from "@/components/fin/finTest.vue";
-import finEthics from "@/components/fin/finEthics.vue";
+import finTestinOrder from "@/components/fin/finTestinOrder.vue";
 import finTestMock100 from "@/components/fin/finTestMock100.vue";
-
+//道德
+import finEthics from "@/components/fin/finEthics.vue";
+//測試
 import testMainPage from "@/components/test/testMainPage.vue";
 import testAxios from "@/components/test/testAxios.vue";
-import testImage from "@/components/test/testImage.vue";
 import testComputed from "@/components/test/testComputed.vue";
 import testStore from "@/components/test/testStore.vue";
+import testPathVal from "@/components/test/testPathVal.vue";
+//測試UI設計
+import testImage from "@/components/testUI/testImage.vue";
+import testCSSLeave from "@/components/testUI/testCSSLeave.vue";
+
 
 
 Vue.use(VueRouter);
@@ -75,6 +81,18 @@ const router = new VueRouter({
         name: 'testStore',
         component: testStore
       },
+      {
+        path: 'testPathVal',
+        name: 'testPathVal',
+        component: testPathVal
+      },
+      {
+        path: 'testCSSLeave',
+        name: 'testCSSLeave',
+        component: testCSSLeave
+      },
+
+
       ],
     },
 
