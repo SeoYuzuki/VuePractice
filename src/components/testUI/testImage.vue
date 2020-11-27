@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     testImage
-    <Apple />
+
     <br />
     <div v-for="picture in pictures" :key="picture" class="polaroid2">
       <img :src="picture" />

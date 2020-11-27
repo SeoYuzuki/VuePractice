@@ -1,11 +1,11 @@
 <template>
   <div>
-    hihi e
-    <!-- <BlockUI :message="logoutMsg" v-show="isShowLogoutSpinner">
-      <font-awesome-icon icon="cog" size="3x" spin fixed-width>
-      </font-awesome-icon>
-    </BlockUI> -->
-    <p>Loading: {{ ifLoading }}</p>
+    npm install vuex --save
+    <br />
+
+    <button v-on:click="changeColor">change text</button>
+    <input v-model="text2Change" />
+    <p>text: {{ ifLoading }}</p>
     <p>doneTodosCount: {{ doneTodosCount }}</p>
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
   data() {
     return {
       logoutMsg: "系統登出中，請稍候!!",
+      text2Change: "aa",
     };
   },
   computed: {
@@ -31,7 +32,13 @@ export default {
       return this.$store.getters.doneTodos;
     },
   },
-  methods: {},
+  methods: {
+    changeColor: function () {
+      let payload = { text: this.text2Change };
+      console.log(payload);
+      this.$store.commit("changeText", payload);
+    },
+  },
   watch: {},
   beforeCreate() {},
   created() {},
@@ -46,4 +53,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style  scoped></style>

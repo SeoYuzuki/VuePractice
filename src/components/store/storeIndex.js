@@ -23,6 +23,12 @@ export default new Vuex.Store({
             { id: 3, text: '...', done: true },
         ]
     },
+    mutations: {
+        changeText: function (state, payload) {
+            console.log(payload);
+            state.appleColor = payload.text;
+        },
+    },
     getters,
     /**
      * 嚴格模式: 無論何時發生了狀態變更且不是由 mutation 函數引起的，將會拋出錯誤。
