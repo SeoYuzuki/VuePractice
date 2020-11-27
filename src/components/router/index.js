@@ -17,86 +17,93 @@ import testPathVal from "@/components/test/testPathVal.vue";
 //測試UI設計
 import testImage from "@/components/testUI/testImage.vue";
 import testCSSLeave from "@/components/testUI/testCSSLeave.vue";
+import testSlide from "@/components/testUI/testSlide.vue";
 
 
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: "history",
-  // base: process.env.VUE_APP_PUBLIC_PATH,
-  //routes
-  routes: [
+    mode: "history",
+    // base: process.env.VUE_APP_PUBLIC_PATH,
+    //routes
+    routes: [
 
-    {
-      path: '/example',
-      name: 'example',
-      component: HelloWorld
-    },
-    {
-      path: '/finTest',
-      name: 'finTest',
-      component: finTest,
-      children: [{
-        path: 'finTestH',
-        name: 'finTestH',
-        component: finTestinOrder
-      },
-      {
-        path: 'finTestT',
-        name: 'finTestT',
-        component: finTestMock100
-      },
-      ],
-    },
+        {
+            path: '/example',
+            name: 'example',
+            component: HelloWorld
+        },
+        {
+            path: '/finTest',
+            name: 'finTest',
+            component: finTest,
+            children: [{
+                    path: 'finTestH',
+                    name: 'finTestH',
+                    component: finTestinOrder
+                },
+                {
+                    path: 'finTestT',
+                    name: 'finTestT',
+                    component: finTestMock100
+                },
+            ],
+        },
 
-    {
-      path: '/finEthics',
-      name: 'finEthics',
-      component: finEthics
-    },
+        {
+            path: '/finEthics',
+            name: 'finEthics',
+            component: finEthics
+        },
+        {
+            path: '/testImage',
+            name: 'testImage',
+            component: testImage
+        },
+        {
+            path: '/testCSSLeave',
+            name: 'testCSSLeave',
+            component: testCSSLeave
+        },
+        {
+            path: '/testSlide',
+            name: 'testSlide',
+            component: testSlide
+        },
+        {
 
-    {
+            path: '/testMainPage',
+            name: 'testMainPage',
+            component: testMainPage,
+            children: [{
+                    path: 'testAxios',
+                    name: 'testAxios',
+                    component: testAxios
+                },
 
-      path: '/testMainPage',
-      name: 'testMainPage',
-      component: testMainPage,
-      children: [{
-        path: 'testAxios',
-        name: 'testAxios',
-        component: testAxios
-      },
-      {
-        path: 'testImage',
-        name: 'testImage',
-        component: testImage
-      },
-      {
-        path: 'testComputed',
-        name: 'testComputed',
-        component: testComputed
-      },
-      {
-        path: 'testStore',
-        name: 'testStore',
-        component: testStore
-      },
-      {
-        path: 'testPathVal',
-        name: 'testPathVal',
-        component: testPathVal
-      },
-      {
-        path: 'testCSSLeave',
-        name: 'testCSSLeave',
-        component: testCSSLeave
-      },
+                {
+                    path: 'testComputed',
+                    name: 'testComputed',
+                    component: testComputed
+                },
+                {
+                    path: 'testStore',
+                    name: 'testStore',
+                    component: testStore
+                },
+                {
+                    path: 'testPathVal',
+                    name: 'testPathVal',
+                    component: testPathVal
+                },
 
 
-      ],
-    },
 
-  ]
+            ],
+        },
+
+    ]
 });
 
 

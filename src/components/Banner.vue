@@ -1,32 +1,61 @@
 <template>
   <div class="hello">
-    <div id="lilist" v-on:click="op">
-      <div id="BannerText">Banner</div>
-      <li>
-        <div class="div1" ref="ref1">
-          <router-link to="/example">example </router-link>
-        </div>
+    <!-- https://codepen.io/antcook/pen/OboxbO -->
+    <div class="tt">aa</div>
+    <ul class="menu">
+      <li><a>左</a></li>
+      <li @mouseover="listOne = true" @mouseleave="listOne = false">
+        <a href="#">一般</a>
+
+        <transition name="fade">
+          <ul v-if="listOne" @click="listOne = false">
+            <li><router-link to="/finTest">金融常識 </router-link></li>
+            <li><router-link to="/finEthics">道德 </router-link></li>
+            <li><router-link to="/example">example </router-link></li>
+          </ul>
+        </transition>
       </li>
-      <li>
-        <div class="div1" ref="ref2">
-          <router-link to="/finTest">金融常識 </router-link>
-        </div>
+
+      <li @mouseover="listTwo = true" @mouseleave="listTwo = false">
+        <router-link to="/TestMainPage">測試 </router-link>
+
+        <transition name="fade">
+          <ul v-if="listTwo" @click="listTwo = false">
+            <li><router-link to="/TestMainPage">測試 </router-link></li>
+          </ul>
+        </transition>
       </li>
-      <li>
-        <div class="div1" ref="ref3">
-          <router-link to="/finEthics">道德 </router-link>
-        </div>
+
+      <li @mouseover="listThree = true" @mouseleave="listThree = false">
+        <a href="#">測試UI</a>
+
+        <transition name="fade">
+          <ul v-if="listThree" @click="listThree = false">
+            <li>
+              <router-link to="/testImage"> testImage! </router-link>
+            </li>
+            <li>
+              <router-link to="/testCSSLeave"> testCSSLeave </router-link>
+            </li>
+            <li>
+              <router-link to="/testSlide"> testSlide </router-link>
+            </li>
+          </ul>
+        </transition>
       </li>
-      <li>
-        <div class="div1" ref="ref4">
-          <router-link to="/TestMainPage">測試 </router-link>
-        </div>
+
+      <li @mouseover="listFour = true" @mouseleave="listFour = false">
+        <a href="#">Menu Item4</a>
+
+        <transition name="fade">
+          <ul v-if="listFour" @click="listFour = false">
+            <li><a href="#">Sub Menu Item</a></li>
+            <li><a href="#">Sub Menu Item</a></li>
+            <li><a href="#">Sub Menu Item</a></li>
+          </ul>
+        </transition>
       </li>
-      <button v-on:click="greet">測試用按鈕2</button>
-    </div>
-    <transition mode="out-in">
-      <router-view></router-view>
-    </transition>
+    </ul>
   </div>
 </template>
 
@@ -40,6 +69,10 @@ export default {
   data() {
     return {
       bgColor: "22",
+      listOne: false,
+      listTwo: false,
+      listThree: false,
+      listFour: false,
     };
   },
   methods: {
@@ -50,49 +83,16 @@ export default {
       this.bgColor = "#f5e6c5";
       console.log(this.bgColor);
     },
-    op: function (event) {
-      console.log(event.target);
-      if (event.target.getAttribute("href") == "#/example") {
-        this.$refs["ref1"].setAttribute("style", "background-color:#f5e6c5");
-        this.$refs["ref2"].setAttribute("style", "background-color:null");
-        this.$refs["ref3"].setAttribute("style", "background-color:null");
-        this.$refs["ref4"].setAttribute("style", "background-color:null");
-      } else if (event.target.getAttribute("href") == "#/a") {
-        this.$refs["ref1"].setAttribute("style", "background-color:null");
-        this.$refs["ref2"].setAttribute("style", "background-color:#f5e6c5");
-        this.$refs["ref3"].setAttribute("style", "background-color:null");
-        this.$refs["ref4"].setAttribute("style", "background-color:null");
-      } else if (event.target.getAttribute("href") == "#/b") {
-        this.$refs["ref1"].setAttribute("style", "background-color:null");
-        this.$refs["ref2"].setAttribute("style", "background-color:null");
-        this.$refs["ref3"].setAttribute("style", "background-color:#f5e6c5");
-        this.$refs["ref4"].setAttribute("style", "background-color:null");
-      } else if (event.target.getAttribute("href") == "#/test") {
-        this.$refs["ref1"].setAttribute("style", "background-color:null");
-        this.$refs["ref2"].setAttribute("style", "background-color:null");
-        this.$refs["ref3"].setAttribute("style", "background-color:null");
-        this.$refs["ref4"].setAttribute("style", "background-color:#f5e6c5");
-      }
-    },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped src='@/assets/commonStyle.css'></style>
-<style scoped>
-li,
-#BannerText {
-  display: inline-block;
-  margin: 0 10px;
-}
 
-#lilist {
-  background-color: rgb(200, 191, 226);
-  border-top-style: solid;
-  border-color: rgb(10, 10, 61);
-  color: rgb(0, 0, 0);
-  margin: 0px;
+<style scoped src='@/assets/menuStyle.css'></style>
+<style scoped>
+.hello {
+  font-size: 0;
+  text-align: center;
 }
 
 .div1 {
@@ -103,13 +103,8 @@ li,
   margin: 0;
 }
 
-.red_color {
-  background-color: red;
+.tt {
+  background-color: rgb(236, 183, 183);
 }
-.pur_color {
-  background-color: rgb(200, 191, 226);
-}
-
-
 </style>
 
