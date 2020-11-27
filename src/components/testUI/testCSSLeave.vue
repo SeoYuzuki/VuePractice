@@ -31,14 +31,22 @@
       </span>
       <br />
       <span style="display: inline">
-        <button
+        <!-- <button
           style="display: inline-block"
           @mouseover="over2(true)"
           @mouseleave="over2(false)"
           class="dropbtn"
         >
           over2
-        </button>
+        </button> -->
+        <div
+          style="display: inline-block"
+          class="block"
+          @mouseover="over2(true)"
+          @mouseout="over2(false)"
+        >
+          Block 0
+        </div>
         <transition mode="out-in">
           <div class="block" v-if="show2">Block 1</div>
         </transition>
@@ -62,6 +70,7 @@ export default {
       show: true,
       show2: false,
       hello: "H",
+      hoverTarget: "none",
     };
   },
   computed: {
@@ -93,6 +102,13 @@ export default {
     over2(v) {
       this.show2 = v;
     },
+    parentHover: function () {
+      this.hoverTarget = "parent";
+    },
+    childHover: function (event) {
+      event.stopPropagation();
+      this.hoverTarget = "child";
+    },
   },
   watch: {},
   beforeCreate() {},
@@ -111,13 +127,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped src='@/assets/commonStyle.css'></style>
 <style scoped>
+.hello {
+  background-color: rgb(245, 230, 197);
+  text-align: justify;
+}
+
 .dropbtn {
-  background-color: #3498db;
+  background-color: #82b83b;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  text-align: left;
 }
 
 .dropbtn:hover,
@@ -126,6 +148,7 @@ export default {
 }
 
 .dropdown {
+  width: auto;
   position: relative;
   display: inline-block;
 }
@@ -160,7 +183,7 @@ export default {
   color: #fff;
   display: table-cell;
   font-size: 16px;
-   padding: 16px;
+  padding: 16px;
   width: 100px;
 
   text-align: center;

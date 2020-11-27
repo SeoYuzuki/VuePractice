@@ -5,13 +5,11 @@
     <div style="display: inline-block; margin: 0 10px">
       <router-link to="/TestMainPage/testAxios">testAxios</router-link>
     </div>
-    <div style="display: inline-block; margin: 0 10px">
-      <router-link to="/TestMainPage/testImage">testImage!</router-link>
-    </div>
+
     <div style="display: inline-block; margin: 0 10px">
       <router-link to="/TestMainPage/testComputed"
-        >testComputed and watch!</router-link
-      >
+        >testComputed and watch!
+      </router-link>
     </div>
     <div style="display: inline-block; margin: 0 10px">
       <router-link to="/TestMainPage/testStore">testStore!</router-link>
@@ -19,12 +17,9 @@
     <div style="display: inline-block; margin: 0 10px">
       <router-link to="/TestMainPage/testPathVal">testPathVal!</router-link>
     </div>
-    <div style="display: inline-block; margin: 0 10px">
-      <router-link to="/TestMainPage/testCSSLeave">testCSSLeave</router-link>
-    </div>
 
     <div>
-      <div class="card" style="width: 30rem">
+      <div class="card">
         <router-view></router-view>
       </div>
     </div>
@@ -37,9 +32,7 @@ export default {
     return {};
   },
   created: function () {},
-  methods: {
-  
-  },
+  methods: {},
 };
 </script>
 
