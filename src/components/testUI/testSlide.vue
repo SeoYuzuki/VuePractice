@@ -19,7 +19,7 @@ export default {
   props: {},
   data() {
     return {
-      message: "Click for AAAAAAAAAA",
+      message: "Click for AAAAAAAAAAAAAAAAAA",
       message2: "Click for BBBBBBBBBB",
       show: true,
     };

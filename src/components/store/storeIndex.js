@@ -28,8 +28,16 @@ export default new Vuex.Store({
             console.log(payload);
             state.appleColor = payload.text;
         },
+        addDoneTodos: function (state, payload) {
+            console.log(payload);
+            state.todos.push(payload);
+        },
+        aaa(state) {
+            console.log(state);
+        },
     },
     getters,
+
     /**
      * 嚴格模式: 無論何時發生了狀態變更且不是由 mutation 函數引起的，將會拋出錯誤。
      * 嚴格模式會深度監測狀態樹來檢測不合規的狀態變更——請確保在發佈環境下關閉嚴格模式，以避免性能損失。
