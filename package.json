@@ -11,7 +11,9 @@
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
+    "iview": "^3.5.4",
     "jquery": "^3.5.1",
+    "view-design": "^4.4.0",
     "vue": "^2.6.12",
     "vue-axios": "^3.2.0",
     "vue-router": "^3.4.9",
@@ -39,7 +41,14 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "vue/no-parsing-error": [
+        2,
+        {
+          "x-invalid-end-tag": false
+        }
+      ]
+    }
   },
   "browserslist": [
     "> 1%",

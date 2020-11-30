@@ -7,6 +7,8 @@
     <input v-model="text2Change" />
     <p>text: {{ ifLoading }}</p>
     <p>doneTodosCount: {{ doneTodosCount }}</p>
+    <Button type="warning" @click="add">add</Button>
+    <!-- <Button type="warning" @click="showTag">showTag</Button> -->
   </div>
 </template>
 
@@ -37,6 +39,10 @@ export default {
       let payload = { text: this.text2Change };
       console.log(payload);
       this.$store.commit("changeText", payload);
+    },
+    add() {
+      let tt = { id: 44, text: "...", done: true };
+      this.$store.commit("addDoneTodos", tt);
     },
   },
   watch: {},

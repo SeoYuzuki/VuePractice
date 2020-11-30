@@ -18,7 +18,8 @@ import testPathVal from "@/components/test/testPathVal.vue";
 import testImage from "@/components/testUI/testImage.vue";
 import testCSSLeave from "@/components/testUI/testCSSLeave.vue";
 import testSlide from "@/components/testUI/testSlide.vue";
-
+import testIV01 from "@/components/testUI/testIV01.vue";
+import testIV02 from "@/components/testUI/testIV02.vue";
 
 
 Vue.use(VueRouter);
@@ -39,15 +40,15 @@ const router = new VueRouter({
             name: 'finTest',
             component: finTest,
             children: [{
-                    path: 'finTestH',
-                    name: 'finTestH',
-                    component: finTestinOrder
-                },
-                {
-                    path: 'finTestT',
-                    name: 'finTestT',
-                    component: finTestMock100
-                },
+                path: 'finTestH',
+                name: 'finTestH',
+                component: finTestinOrder
+            },
+            {
+                path: 'finTestT',
+                name: 'finTestT',
+                component: finTestMock100
+            },
             ],
         },
 
@@ -72,32 +73,41 @@ const router = new VueRouter({
             component: testSlide
         },
         {
+            path: '/testIV01',
+            name: 'testIV01',
+            component: testIV01
+        },
+        {
+            path: '/testIV02',
+            name: 'testIV02',
+            component: testIV02
+        },
+        {
 
             path: '/testMainPage',
             name: 'testMainPage',
             component: testMainPage,
             children: [{
-                    path: 'testAxios',
-                    name: 'testAxios',
-                    component: testAxios
-                },
+                path: 'testAxios',
+                name: 'testAxios',
+                component: testAxios
+            },
 
-                {
-                    path: 'testComputed',
-                    name: 'testComputed',
-                    component: testComputed
-                },
-                {
-                    path: 'testStore',
-                    name: 'testStore',
-                    component: testStore
-                },
-                {
-                    path: 'testPathVal',
-                    name: 'testPathVal',
-                    component: testPathVal
-                },
-
+            {
+                path: 'testComputed',
+                name: 'testComputed',
+                component: testComputed
+            },
+            {
+                path: 'testStore',
+                name: 'testStore',
+                component: testStore
+            },
+            {
+                path: 'testPathVal',
+                name: 'testPathVal',
+                component: testPathVal
+            },
 
 
             ],

@@ -40,6 +40,12 @@
             <li>
               <router-link to="/testSlide"> testSlide </router-link>
             </li>
+            <li>
+              <router-link to="/testIV01"> testIV01 </router-link>
+            </li>
+            <li>
+              <router-link to="/testIV02"> testIV02 </router-link>
+            </li>
           </ul>
         </transition>
       </li>
