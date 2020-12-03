@@ -8,11 +8,49 @@
     <transition name="slide">
       <p v-if="!show" style="position: absolute">{{ message2 }}</p>
     </transition>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <table id="only-body-table" class="sindu-table sindu_origin_table">
+      <thead>
+        <tr>
+          <th class="sindu_handle">Movie Title</th>
+          <th>Genre</th>
+          <th>Year</th>
+          <th>Gross</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="sindu_handle">Howard The Duck<i class="handle"></i></td>
+          <td>"Comedy"</td>
+          <td>1986</td>
+          <td>$16,295,774</td>
+        </tr>
+        <tr>
+          <td class="sindu_handle">Star Wars<i class="handle"></i></td>
+          <td>Adventure, Sci-fi</td>
+          <td>1977</td>
+          <td>$460,935,665</td>
+        </tr>
+
+        <tr>
+          <td class="sindu_handle">American Graffiti<i class="handle"></i></td>
+          <td>Comedy, Drama</td>
+          <td>1973</td>
+          <td>$115,000,000</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
 //import Banner from "@/components/Banner.vue";
+//import tableDragger from "table-dragger";
+import tableDragger from "../../../node_modules/table-dragger/dist/table-dragger.min.js";
 
 export default {
   components: {},
@@ -30,7 +68,12 @@ export default {
   beforeCreate() {},
   created() {},
   beforeMount() {},
-  mounted() {},
+  mounted() {
+    tableDragger(document.querySelector("#only-body-table"), {
+      mode: "row",
+      onlyBody: true,
+    });
+  },
   activated() {},
   deactivated() {},
   beforeUpdate() {},
