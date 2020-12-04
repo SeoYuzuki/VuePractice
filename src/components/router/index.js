@@ -21,6 +21,12 @@ import testSlide from "@/components/testUI/testSlide.vue";
 import testIV01 from "@/components/testUI/testIV01.vue";
 import testIV02 from "@/components/testUI/testIV02.vue";
 
+//
+import t1 from "@/components/cbp2/t1.vue";
+import t2 from "@/components/cbp2/t2.vue";
+import t3list from "@/components/cbp2/t3list.vue";
+import t1newtable from "@/components/cbp2/t1newtable.vue";
+
 
 Vue.use(VueRouter);
 
@@ -112,7 +118,25 @@ const router = new VueRouter({
 
             ],
         },
-
+        {
+            path: '/t1',
+            name: 't1',
+            component: t1
+        },
+        {
+            path: '/t2',
+            name: 't2',
+            component: t2
+        },
+        {
+            path: '/t3list',
+            name: 't3list',
+            component: t3list
+        }, {
+            path: '/t1newtable',
+            name: 't1newtable',
+            component: t1newtable
+        },
     ]
 });
 

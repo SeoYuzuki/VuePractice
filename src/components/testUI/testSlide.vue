@@ -49,8 +49,8 @@
 
 <script>
 //import Banner from "@/components/Banner.vue";
-//import tableDragger from "table-dragger";
-import tableDragger from "../../../node_modules/table-dragger/dist/table-dragger.min.js";
+import tableDragger from "table-dragger";
+//import tableDragger from "../../../node_modules/table-dragger/dist/table-dragger.min.js";
 
 export default {
   components: {},

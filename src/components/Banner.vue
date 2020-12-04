@@ -51,13 +51,14 @@
       </li>
 
       <li @mouseover="listFour = true" @mouseleave="listFour = false">
-        <a href="#">Menu Item4</a>
+        <a href="#">CBP2</a>
 
         <transition name="fade">
           <ul v-if="listFour" @click="listFour = false">
-            <li><a href="#">Sub Menu Item</a></li>
-            <li><a href="#">Sub Menu Item</a></li>
-            <li><a href="#">Sub Menu Item</a></li>
+            <li><a href="/t1">t1 表格</a></li>
+            <li><a href="/t2">t2 編輯紐</a></li>
+            <li><a href="/t3list">t3 list</a></li>
+            <li><a href="/t1newtable">t1newtable</a></li>
           </ul>
         </transition>
       </li>
