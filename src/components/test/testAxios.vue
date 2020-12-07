@@ -10,7 +10,6 @@
     <button v-on:click="axios2">測試axios2</button>
     <button v-on:click="axios3">測試axios3</button>
     <div v-html="wikiTxt"></div>
-
   </div>
 </template>
 
@@ -35,7 +34,7 @@ export default {
 
       const url = "http://10.214.141.45:5000/testV";
       //const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
-      this.axios.get(url).then((response) => {
+      this.axios.post(url, { a: 123 }).then((response) => {
         this.wikiTxt = response;
         //console.log(response["data"]);
       });

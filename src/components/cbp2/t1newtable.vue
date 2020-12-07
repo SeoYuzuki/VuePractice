@@ -135,7 +135,7 @@ export default {
 }
 
 .ivu-table-column-center div {
-  background-color: rgb(88, 48, 182);
+  background-color: rgb(191, 173, 235);
   padding: 5px;
 }
 
