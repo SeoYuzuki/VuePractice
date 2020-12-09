@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img style="width: 50px" alt="Vue logo" src="./assets/logo.png" />
-    yoyo2
+    <img style="width: 50px" alt="Vue logo" src="@/assets/logo.png" />
+    AH↓HA↑HA↑HA↑HA↑
     <Banner msg="Welcome to Your Vue.js App" />
     <!--router-view  -->
     <div style="clear: both">

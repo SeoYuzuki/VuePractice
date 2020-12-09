@@ -20,12 +20,16 @@ import testCSSLeave from "@/components/testUI/testCSSLeave.vue";
 import testSlide from "@/components/testUI/testSlide.vue";
 import testIV01 from "@/components/testUI/testIV01.vue";
 import testIV02 from "@/components/testUI/testIV02.vue";
+import cssLight from "@/components/testUI/cssLight.vue";
 
-//
+// cbp2
 import t1 from "@/components/cbp2/t1.vue";
-import t2 from "@/components/cbp2/t2.vue";
+import t3get from "@/components/cbp2/t3get.vue";
 import t3list from "@/components/cbp2/t3list.vue";
 import t1newtable from "@/components/cbp2/t1newtable.vue";
+import apiList from "@/components/cbp2/apiList.vue";
+
+
 
 
 Vue.use(VueRouter);
@@ -89,6 +93,11 @@ const router = new VueRouter({
             component: testIV02
         },
         {
+            path: '/cssLight',
+            name: 'cssLight',
+            component: cssLight
+        },
+        {
 
             path: '/testMainPage',
             name: 'testMainPage',
@@ -124,18 +133,24 @@ const router = new VueRouter({
             component: t1
         },
         {
-            path: '/t2',
-            name: 't2',
-            component: t2
+            path: '/t3get',
+            name: 't3get',
+            component: t3get
         },
         {
             path: '/t3list',
             name: 't3list',
             component: t3list
-        }, {
+        },
+        {
             path: '/t1newtable',
             name: 't1newtable',
             component: t1newtable
+        },
+        {
+            path: '/apiList',
+            name: 'apiList',
+            component: apiList
         },
     ]
 });

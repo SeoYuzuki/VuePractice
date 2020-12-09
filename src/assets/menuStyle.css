@@ -10,10 +10,16 @@
 }
 
 .menu a {
+    height: 55px;
     display: block;
-    padding: 20px;
+    padding: 2px;
     color: #fff;
     text-decoration: none;
+    /* text-align: center; */
+}
+
+.menu a .bb {
+    line-height: 50px;
 }
 
 .menu li {
@@ -29,7 +35,7 @@
 .menu li ul {
     position: absolute;
     left: 0;
-    top: 61px;
+    top: 55px;
     margin: 0;
     padding: 0;
 }
@@ -43,12 +49,10 @@
     background: #444;
 }
 
-.fade-enter-active,
-.fade-leave-active {
+.fade-enter-active, .fade-leave-active {
     transition: opacity 0.3s;
 }
 
-.fade-enter,
-.fade-leave-active {
+.fade-enter, .fade-leave-active {
     opacity: 0;
 }

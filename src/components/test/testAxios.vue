@@ -10,6 +10,16 @@
     <button v-on:click="axios2">測試axios2</button>
     <button v-on:click="axios3">測試axios3</button>
     <div v-html="wikiTxt"></div>
+
+    <select v-model="selected">
+      <option v-for="option in options" v-bind:value="option.value" v-bind:key="option.value">
+        {{ option.text }}
+      </option>
+      <option v-for="option in options" v-bind:value="option.value" v-bind:key="option.value+1">
+        {{ option.text }}
+      </option>
+    </select>
+    <span>Selected: {{ selected }}</span>
   </div>
 </template>
 
@@ -17,7 +27,14 @@
 export default {
   data() {
     return {
+      picked: "",
       wikiTxt: "",
+      selected: "A",
+      options: [
+        { text: "One", value: "A" },
+        { text: "Two", value: "B" },
+        { text: "Three", value: "C" },
+      ],
     };
   },
   created: function () {},
