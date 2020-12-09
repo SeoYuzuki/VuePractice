@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <br />
-    t3
     <div class="tempdiv1">
       <Row>
         <i-col span="24">
@@ -236,22 +235,30 @@ export default {
   components: {
     // t3marriage,
   },
-  props: {},
+  props: {
+    cusname: String,
+    cusENname: String,
+    cardholderID: String,
+    accID: String,
+    companyAddress: {
+      type: String,
+      default: "",
+    },
+    currentAddress: {
+      type: String,
+      default: "",
+    },
+    maritalStatus: String,
+    gender: String,
+    email: String,
+  },
   data() {
     return {
       modal2: false,
       modal3: false,
       modal_loading: false,
       isNotEdit: true,
-      cusname: "兎田ぺこら",
-      cusENname: "Usada Pekora",
-      cardholderID: "A123456789",
-      accID: "A123456789",
-      companyAddress: "",
-      currentAddress: "",
-      maritalStatus: "已婚",
-      gender: "女",
-      email: "pekora@hololive.com",
+
       saveEdit: {},
       maritalList: [
         {
