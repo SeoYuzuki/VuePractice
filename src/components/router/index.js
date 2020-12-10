@@ -20,7 +20,7 @@ import testCSSLeave from "@/components/testUI/testCSSLeave.vue";
 import testSlide from "@/components/testUI/testSlide.vue";
 import testIV01 from "@/components/testUI/testIV01.vue";
 import testIV02 from "@/components/testUI/testIV02.vue";
-import cssLight from "@/components/testUI/cssLight.vue";
+import cssLight2 from "@/components/testUI/cssLight2.vue";
 
 // cbp2
 import t1 from "@/components/cbp2/t1.vue";
@@ -29,8 +29,8 @@ import t3list from "@/components/cbp2/t3list.vue";
 import t1newtable from "@/components/cbp2/t1newtable.vue";
 import apiList from "@/components/cbp2/apiList.vue";
 
-
-
+// 首頁
+import homePage from "@/components/homePage.vue";
 
 Vue.use(VueRouter);
 
@@ -39,7 +39,11 @@ const router = new VueRouter({
     // base: process.env.VUE_APP_PUBLIC_PATH,
     //routes
     routes: [
-
+        {
+            path: '/',
+            name: 'homePage',
+            component: homePage
+        },
         {
             path: '/example',
             name: 'example',
@@ -93,9 +97,9 @@ const router = new VueRouter({
             component: testIV02
         },
         {
-            path: '/cssLight',
-            name: 'cssLight',
-            component: cssLight
+            path: '/cssLight2',
+            name: 'cssLight2',
+            component: cssLight2
         },
         {
 
