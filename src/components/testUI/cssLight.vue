@@ -1,46 +1,62 @@
 <template>
-  <div id="nav-container2">
+  <div
+    id="nav-container2"
+    @mouseover="isPushed = true"
+    @mouseleave="isPushed = false"
+    @click="trigger"
+    :class="{ standing: isPushed }"
+  >
     <div class="toggle-icon2">
       <span class="bar">
-        <div @click="test" class="lildiv">aaa</div>
+        <div @click="clickdiv" class="lildiv">
+          <router-link to="/"> homePage </router-link>
+        </div>
       </span>
-      <span class="bar"><div @click="test" class="lildiv">bbb</div></span>
+      <span class="bar"><div @click="clickdiv" class="lildiv">bbb</div> </span>
 
-      <span class="bar"
-        ><div @click="test" class="lildiv">
+      <span class="bar">
+        <div @click="clickdiv" class="lildiv">
           <Button type="info">Info</Button>
-        </div></span
-      >
+        </div>
+      </span>
     </div>
+    <div class="testdiv"></div>
   </div>
 </template>
 
 <script>
 //import Banner from "@/components/Banner.vue";
-import $ from "jquery";
+// import $ from "jquery";
 
 export default {
   components: {},
-  props: {},
+  props: {
+    tt: null,
+  },
   data() {
-    return {};
+    return {
+      isPushed: false,
+    };
   },
   computed: {},
   methods: {
-    test() {
-      console.log(111111);
+    trigger() {
+      this.isPushed = !this.isPushed;
+    },
+    clickdiv() {
+      console.log("clickdiv");
       event.stopPropagation();
     },
   },
-  watch: {},
+  watch: {
+    // tt: function (e) {
+    //   console.log(e)
+    // },
+  },
   beforeCreate() {},
   created() {},
   beforeMount() {},
-  mounted() {
-    $(".toggle-icon2").click(function () {
-      $("#nav-container2").toggleClass("pushed2");
-    });
-  },
+  mounted() {},
   activated() {},
   deactivated() {},
   beforeUpdate() {},
@@ -53,7 +69,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #nav-container2 {
-  height: 100%;
+  height: 105%;
+  width: 100%;
   background-color: rgb(0, 0, 0);
   display: inline-block;
   position: relative;
@@ -109,23 +126,23 @@ export default {
 }
 
 /* pushed*/
-/* .pushed2 .toggle-icon2 {
+/* .standing .toggle-icon2 {
  
 } */
 
 /**垂直槓 */
-.pushed2 .bar:nth-of-type(1) {
-  border-right: 2.8em solid rgb(10, 4, 4);
-  border-left: 0.5em solid #050202;
+.standing .bar:nth-of-type(1) {
+  border-right: 2.8em solid #c7c7c7;
+  border-left: 0.5em solid #c7c7c7;
 
   margin-left: -1.5em;
   margin-top: 8em;
   transform: rotate(-90deg) translateY(0em);
 }
 
-.pushed2 .bar:nth-of-type(2) {
-  border-right: 2.8em solid rgb(10, 4, 4);
-  border-left: 0.5em solid #050202;
+.standing .bar:nth-of-type(2) {
+  border-right: 2.8em solid #c7c7c7;
+  border-left: 0.5em solid #c7c7c7;
 
   margin-left: -1.5em;
   margin-top: 4em;
@@ -133,9 +150,9 @@ export default {
   transform: rotate(-90deg) translateY(0em);
 }
 
-.pushed2 .bar:nth-of-type(3) {
-  border-right: 2.8em solid rgb(10, 4, 4);
-  border-left: 0.5em solid #050202;
+.standing .bar:nth-of-type(3) {
+  border-right: 2.8em solid #c7c7c7;
+  border-left: 0.5em solid #c7c7c7;
 
   margin-left: -1.5em;
   margin-top: 4em;
@@ -143,109 +160,144 @@ export default {
   transform: rotate(-90deg) translateY(0em);
 }
 /**包裹元件 */
-.pushed2 .bar:nth-of-type(1) div {
-  display: inline-block;
-  opacity: 100;
-  transform: rotate(90deg) translateY(7.7em) translateX(7.7em);
-
-  /* animation-delay: 3s; */
-  animation: change 3s 1;
-}
-.pushed2 .bar:nth-of-type(2) div {
-  display: inline-block;
-  opacity: 100;
-  transform: rotate(90deg) translateY(7.7em) translateX(7.7em);
-
-  /* animation-delay: 3s; */
-  animation: change 3s 1;
-}
-.pushed2 .bar:nth-of-type(3) div {
-  display: inline-block;
-  opacity: 100;
-  transform: rotate(90deg) translateY(7.7em) translateX(7.7em);
-
-  /* animation-delay: 3s; */
-  animation: change 3s 1;
-}
-@keyframes change {
-  0% {
-    background: rgba(237, 255, 159, 0);
-    height: 3.8em;
-    width: 10em;
-  }
-  /* 30% {
-    background: rgba(170, 35, 35, 0.5);
-    height: 3.8em;
-    width: 8em;
-  } */
-  100% {
-    background: rgba(248, 255, 219, 1);
-    height: 3.8em;
-    width: 18em;
-  }
-  /* from {
-    background: rgba(237, 255, 159, 0);
-  }
-  to {
-    background: rgba(237, 255, 159, 0.8);
-  } */
-}
-.pushed2 .toggle-icon2:hover .bar:nth-of-type(1) {
-  border-right-color: rgba(186, 196, 50, 100%);
-}
-
-.pushed2 .toggle-icon2:hover .bar:nth-of-type(2) {
-  border-right-color: #ac2d2f;
-}
-.pushed2 .toggle-icon2:hover .bar:nth-of-type(3) {
-  border-right-color: #468a3c;
-}
-
-.pushed2 .toggle-icon2 .bar:nth-of-type(1):hover {
-  box-shadow: 0.4em 0 0.6em 0.1em rgba(119, 121, 21, 0.75);
-}
-
-.pushed2 .toggle-icon2 .bar:nth-of-type(2):hover {
-  box-shadow: 0.4em 0 0.6em 0.1em rgba(205, 40, 44, 0.75);
-}
-
-.pushed2 .toggle-icon2 .bar:nth-of-type(3):hover {
-  box-shadow: 0.4em 0 0.6em 0.1em rgba(65, 116, 60, 0.65);
-}
-
-.lildiv {
+.standing .bar:nth-of-type(n) div {
   display: inline-block;
   position: relative;
   height: 3.8em;
   width: 18em;
-  background-color: rgb(241, 241, 241);
+  opacity: 100;
+  background-color: rgb(212, 212, 212);
+
   text-align: left;
   color: rgb(27, 20, 20);
+
+  transform: rotate(90deg) translateY(7.6em) translateX(7.9em);
+
+  /* animation-delay: 3s; */
+  /* animation: change 1s 1; */
 }
 
-.lildiv2 {
-  display: inline-block;
+@keyframes change {
+  0% {
+    background: rgba(237, 255, 159, 0);
+    height: 1.8em;
+    width: 5em;
+  }
+
+  100% {
+    background: rgb(194, 194, 194);
+    height: 3.8em;
+    width: 18em;
+  }
+}
+
+.standing .bar:nth-of-type(1) div:hover {
+  /* box-shadow: 0.4em 0.1em 0.4em 0.1em rgba(208, 211, 23, 0.75); */
+  animation: changeBG 2s infinite;
+  /* animation-fill-mode: forwards; */
+}
+.standing .bar:nth-of-type(2) div:hover {
+  /* box-shadow: 0.4em 0.1em 0.4em 0.1em rgba(231, 31, 35, 0.75); */
+  animation: changeBG2 2s infinite;
+}
+.standing .bar:nth-of-type(3) div:hover {
+  /* box-shadow: 0.4em 0.1em 0.4em 0.1em rgba(54, 197, 41, 0.75); */
+  animation: changeBG3 2s infinite;
+}
+
+@keyframes changeBG {
+  0% {
+    box-shadow: 0.4em 0.1em 0.3em 0.1em rgba(208, 211, 23, 0.75);
+  }
+
+  50% {
+    box-shadow: 0.4em 0.1em 0.6em 0.2em rgba(251, 255, 14, 0.9);
+  }
+
+  100% {
+    box-shadow: 0.4em 0.1em 0.3em 0.1em rgba(208, 211, 23, 0.75);
+  }
+}
+
+@keyframes changeBG2 {
+  0% {
+    box-shadow: 0.4em 0.2em 0.3em 0.1em rgba(231, 31, 35, 0.75);
+  }
+
+  50% {
+    box-shadow: 0.4em 0.1em 0.6em 0.2em rgba(255, 27, 31, 0.9);
+  }
+
+  100% {
+    box-shadow: 0.4em 0.2em 0.3em 0.1em rgba(231, 31, 35, 0.75);
+  }
+}
+
+@keyframes changeBG3 {
+  0% {
+    box-shadow: 0.4em 0.2em 0.3em 0.1em rgba(54, 197, 41, 0.75);
+  }
+
+  50% {
+    box-shadow: 0.4em 0.1em 0.6em 0.2em rgba(48, 241, 30, 0.95);
+  }
+
+  100% {
+    box-shadow: 0.4em 0.2em 0.3em 0.1em rgba(54, 197, 41, 0.75);
+  }
+}
+
+/* .standing .toggle-icon2:hover .bar:nth-of-type(1) {
+  border-right-color: rgb(230, 243, 55);
+  border-left-color: rgb(230, 243, 55);
+}
+
+.standing .toggle-icon2:hover .bar:nth-of-type(2) {
+  border-right-color: #ff3438;
+}
+.standing .toggle-icon2:hover .bar:nth-of-type(3) {
+  border-right-color: #23b60c;
+} */
+
+.standing .toggle-icon2 .bar:nth-of-type(1):hover {
+  border-right-color: rgb(230, 243, 55);
+  border-left-color: rgb(230, 243, 55);
+}
+
+.standing .toggle-icon2 .bar:nth-of-type(2):hover {
+  border-right-color: #ff3438;
+  border-left-color: #ff3438;
+}
+
+.standing .toggle-icon2 .bar:nth-of-type(3):hover {
+  border-right-color: #23b60c;
+  border-left-color: #23b60c;
+}
+
+.standing .testdiv {
+  /* display: float; */
   position: absolute;
-  top: -30px;
-  height: 4.8em;
-  width: 18em;
+  z-index: -50;
+  height: 13.7em;
+  width: 20.9em; 
   background-color: rgb(0, 0, 0);
-  text-align: left;
-  color: rgb(27, 20, 20);
+  transform: rotate(0deg) translateY(-12.1em) translateX(0em);
 
-  box-sizing: border-box;
+  animation: change2 1s 1;
 }
 
-.ccc {
-  background-color: rgb(0, 0, 0);
-  display: block;
-  /* height: 0em; */
-}
+@keyframes change2 {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+    height: 13.7em;
+    width: 5em;
+  }
 
-.pushed2 .test {
-  display: block;
-  height: 50px;
-  background-color: rgb(173, 0, 0);
+  100% {
+    height: 13.7em;
+    /* width: 19.9em; */
+    width: 20.9em; 
+  }
 }
 </style>
 

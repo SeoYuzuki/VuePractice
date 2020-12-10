@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img style="width: 50px" alt="Vue logo" src="@/assets/logo.png" />
-    AH↓HA↑HA↑HA↑HA↑
+    <!-- <img style="width: 50px" alt="Vue logo" src="@/assets/logo.png" />
+    AH↓HA↑HA↑HA↑HA↑ -->
     <Banner msg="Welcome to Your Vue.js App" />
     <!--router-view  -->
     <div style="clear: both">
@@ -51,7 +51,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   /* margin-top: 60px; */
-  background-color: rgb(224, 205, 243);
+  background-color: rgb(41, 41, 41);
   min-height: 500px;
 }
 footer {
