@@ -6,137 +6,61 @@
       <li @mouseover="listZ = true" @mouseleave="listZ = false">
         <a href="#"><cssLight v-bind:tt="listZ" /></a>
       </li>
-      <li @mouseover="listOne = true" @mouseleave="listOne = false">
+      <li
+        @mouseover="listOne = true"
+        @mouseleave="listOne = false"
+        @click="listOne = !listOne"
+      >
         <a href="#">
           <div class="h50div">一般</div>
-          <!-- <div class="underbar"></div> -->
         </a>
-
-        <transition name="fade">
-          <ul v-if="listOne" @click="listOne = false">
-            <li>
-              <div class="h50div">
-                <router-link to="/finTest">金融常識 </router-link>
-              </div>
-              <div class="underbar"></div>
-              <div class="underbar2"></div>
-            </li>
-
-            <li>
-              <div class="h50div">
-                <router-link to="/finEthics">道德 </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/example">example </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-          </ul>
-        </transition>
+        <BannerField
+          :showlist="listA"
+          v-if="listOne"
+          barColor="#6464c8"
+          both
+        ></BannerField>
+      </li>
+      <li
+        @mouseover="listTwo = true"
+        @mouseleave="listTwo = false"
+        @click="listTwo = !listTwo"
+      >
+        <a href="#">
+          <div class="h50div">測試</div>
+        </a>
+        <BannerField
+          :showlist="listB"
+          v-if="listTwo"
+          barColor="#00CED1"
+          both
+        ></BannerField>
+      </li>
+      <li
+        @mouseover="listThree = true"
+        @mouseleave="listThree = false"
+        @click="listThree = !listThree"
+      >
+        <a href="#">
+          <div class="h50div">測試UI</div>
+        </a>
+        <BannerField
+          :showlist="listC"
+          v-if="listThree"
+          barColor="#FFD700"
+          left
+        ></BannerField>
       </li>
 
-      <li @mouseover="listTwo = true" @mouseleave="listTwo = false">
-        <router-link to="/TestMainPage"
-          ><div class="h50div">測試</div></router-link
-        >
-
-        <transition name="fade">
-          <ul v-if="listTwo" @click="listTwo = false">
-            <li>
-              <div class="h50div">
-                <router-link to="/TestMainPage">測試 </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-          </ul>
-        </transition>
-      </li>
-
-      <li @mouseover="listThree = true" @mouseleave="listThree = false">
-        <a href="#"><div class="h50div">測試UI</div></a>
-
-        <transition name="fade">
-          <ul v-if="listThree" @click="listThree = false">
-            <li>
-              <div class="h50div">
-                <router-link to="/testImage"> testImage! </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/testCSSLeave"> testCSSLeave </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/testSlide"> testSlide </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/testIV01"> testIV01 </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/testIV02"> testIV02 </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/cssLight2"> cssLight2 </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-          </ul>
-        </transition>
-      </li>
-
-      <li @mouseover="listFour = true" @mouseleave="listFour = false">
-        <a href="#"><div class="h50div">CBP2</div></a>
-
-        <transition name="fade">
-          <ul v-if="listFour" @click="listFour = false">
-            <li>
-              <div class="h50div">
-                <router-link to="/apiList"> 後端API </router-link>
-              </div>
-              <div class="underbar2"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/t3get"> 試嵌入 </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/t3list"> 試捏 </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/t1"> t1 表格 </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-            <li>
-              <div class="h50div">
-                <router-link to="/t1newtable"> t1newtable </router-link>
-              </div>
-              <div class="underbar"></div>
-            </li>
-          </ul>
-        </transition>
+      <li
+        @mouseover="listFour = true"
+        @mouseleave="listFour = false"
+        @click="listFour = !listFour"
+      >
+        <a href="#">
+          <div class="h50div">CBP2</div>
+        </a>
+        <BannerField :showlist="listD" v-if="listFour" right></BannerField>
       </li>
     </ul>
   </div>
@@ -144,6 +68,8 @@
 
 <script>
 import cssLight from "@/components/testUI/cssLight.vue";
+import BannerField from "@/components/BannerField.vue";
+
 export default {
   name: "HelloWorld2",
   props: {
@@ -151,6 +77,7 @@ export default {
   },
   components: {
     cssLight,
+    BannerField,
   },
 
   data() {
@@ -161,9 +88,33 @@ export default {
       listTwo: false,
       listThree: false,
       listFour: false,
+      listA: [
+        { name: "金融常識", link: "/finTest" },
+        { name: "道德", link: "/finEthics" },
+        { name: "example", link: "/example" },
+      ],
+      listB: [{ name: "測試", link: "/TestMainPage" }],
+      listC: [
+        { name: "testImage", link: "/testImage" },
+        { name: "testCSSLeave", link: "/testCSSLeave" },
+        { name: "testSlide", link: "/testSlide" },
+        { name: "testIV01", link: "/testIV01" },
+        { name: "testIV02", link: "/testIV02" },
+        { name: "cssLight2", link: "/cssLight2" },
+      ],
+      listD: [
+        { name: "後端API", link: "/apiList" },
+        { name: "試嵌入", link: "/t3get" },
+        { name: "試捏", link: "/t3list" },
+        { name: "表格", link: "/t1" },
+      ],
     };
   },
+  watch: {},
   methods: {
+    test() {
+      console.log("test");
+    },
     greet: function () {
       console.log("babababa");
       this.greet2();
@@ -176,7 +127,7 @@ export default {
 </script>
 
 
-<style scoped src='@/assets/menuStyle.css'></style>
+ <style scoped src='@/assets/menuStyle.css'></style>
 <style scoped>
 .hello {
   font-size: 0;
@@ -236,6 +187,5 @@ li:nth-of-type(4):hover ~ .underbar {
   background: rgba(150, 250, 250, 0.5);
   box-shadow: 0 0 10px #46fafa;
 }
-
 </style>
 

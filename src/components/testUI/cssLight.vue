@@ -160,6 +160,7 @@ export default {
   transform: rotate(-90deg) translateY(0em);
 }
 /**包裹元件 */
+
 .standing .bar:nth-of-type(n) div {
   display: inline-block;
   position: relative;
@@ -279,7 +280,7 @@ export default {
   position: absolute;
   z-index: -50;
   height: 13.7em;
-  width: 20.9em; 
+  width: 20.9em;
   background-color: rgb(0, 0, 0);
   transform: rotate(0deg) translateY(-12.1em) translateX(0em);
 
@@ -296,7 +297,7 @@ export default {
   100% {
     height: 13.7em;
     /* width: 19.9em; */
-    width: 20.9em; 
+    width: 20.9em;
   }
 }
 </style>
