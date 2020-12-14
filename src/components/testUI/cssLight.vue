@@ -15,9 +15,7 @@
       <span class="bar"><div @click="clickdiv" class="lildiv">bbb</div> </span>
 
       <span class="bar">
-        <div @click="clickdiv" class="lildiv">
-          <Button type="info">Info</Button>
-        </div>
+        <div @click="clickdiv" class="lildiv"></div>
       </span>
     </div>
     <div class="testdiv"></div>
@@ -167,15 +165,19 @@ export default {
   height: 3.8em;
   width: 18em;
   opacity: 100;
-  background-color: rgb(212, 212, 212);
+  background: rgb(71, 71, 71);
 
-  text-align: left;
-  color: rgb(27, 20, 20);
+  /* text-align: left; */
+  color: rgb(255, 255, 255);
+  text-align: center;
 
   transform: rotate(90deg) translateY(7.6em) translateX(7.9em);
 
-  /* animation-delay: 3s; */
-  /* animation: change 1s 1; */
+  animation-delay: 3s;
+  animation: change 1s 1;
+
+  text-shadow: 0px -2px 0px #000000, 0 0 5px rgba(255, 255, 255, 0.8),
+    0 -4px 15px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes change {
@@ -186,7 +188,7 @@ export default {
   }
 
   100% {
-    background: rgb(194, 194, 194);
+    background: rgb(71, 71, 71);
     height: 3.8em;
     width: 18em;
   }
@@ -194,16 +196,16 @@ export default {
 
 .standing .bar:nth-of-type(1) div:hover {
   /* box-shadow: 0.4em 0.1em 0.4em 0.1em rgba(208, 211, 23, 0.75); */
-  animation: changeBG 2s infinite;
+  /* animation: changeBG 2s infinite; */
   /* animation-fill-mode: forwards; */
 }
 .standing .bar:nth-of-type(2) div:hover {
   /* box-shadow: 0.4em 0.1em 0.4em 0.1em rgba(231, 31, 35, 0.75); */
-  animation: changeBG2 2s infinite;
+  /* animation: changeBG2 2s infinite; */
 }
 .standing .bar:nth-of-type(3) div:hover {
   /* box-shadow: 0.4em 0.1em 0.4em 0.1em rgba(54, 197, 41, 0.75); */
-  animation: changeBG3 2s infinite;
+  /* animation: changeBG3 2s infinite; */
 }
 
 @keyframes changeBG {
@@ -280,11 +282,11 @@ export default {
   position: absolute;
   z-index: -50;
   height: 13.7em;
-  width: 20.9em;
+  width: 19em;
   background-color: rgb(0, 0, 0);
   transform: rotate(0deg) translateY(-12.1em) translateX(0em);
 
-  animation: change2 1s 1;
+  animation: change2 0.5s 1;
 }
 
 @keyframes change2 {
@@ -297,7 +299,7 @@ export default {
   100% {
     height: 13.7em;
     /* width: 19.9em; */
-    width: 20.9em;
+    width: 19em;
   }
 }
 </style>

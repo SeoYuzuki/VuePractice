@@ -1,7 +1,5 @@
 <template>
   <div class="hello">
-    <!-- https://codepen.io/antcook/pen/OboxbO -->
-    <div class="tt">aa</div>
     <ul class="menu">
       <li @mouseover="listZ = true" @mouseleave="listZ = false">
         <a href="#"><cssLight v-bind:tt="listZ" /></a>
@@ -142,10 +140,6 @@ export default {
   margin: 0;
 }
 
-.tt {
-  background-color: rgb(236, 183, 183);
-}
-
 /** */
 li {
   width: 50px;
@@ -156,36 +150,6 @@ li {
 li:hover {
   text-shadow: 0px -2px 0px #000000, 0 0 5px rgba(255, 255, 255, 0.8),
     0 -4px 15px rgba(255, 255, 255, 0.5);
-}
-/* li:hover .underbar {
-  left: 0;
-  width: 40px;
-  background: #6464c8;
-} */
-
-li:nth-of-type(1):hover ~ .underbar {
-  left: 0;
-  width: 40px;
-  background: #6464c8;
-}
-li:nth-of-type(2):hover ~ .underbar {
-  left: 50px;
-  width: 40px;
-  background: #c86464;
-}
-li:nth-of-type(3):hover ~ .underbar {
-  left: 100px;
-  width: 40px;
-  height: 1px;
-  background: rgba(150, 250, 250, 0.5);
-  box-shadow: 0 0 10px #46fafa;
-}
-li:nth-of-type(4):hover ~ .underbar {
-  left: 150px;
-  width: 50px;
-  height: 1px;
-  background: rgba(150, 250, 250, 0.5);
-  box-shadow: 0 0 10px #46fafa;
 }
 </style>
 
