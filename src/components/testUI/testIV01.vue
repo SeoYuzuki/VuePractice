@@ -2,7 +2,7 @@
   <div class="hello">
     <Button @click="toggle = !toggle">toggle!</Button>
     <div v-if="toggle">
-      <Select v-model="model1" style="width: 200px" placeholder='笑鼠人'>
+      <Select v-model="model1" style="width: 200px" placeholder="笑鼠人">
         <Option
           v-for="item in cityList"
           :value="item.value"
@@ -10,6 +10,7 @@
           >{{ item.label }}</Option
         >
       </Select>
+     
     </div>
   </div>
 </template>
@@ -70,5 +71,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+</style>
+
+<style >
+
 </style>
 

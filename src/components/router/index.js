@@ -102,6 +102,12 @@ const router = new VueRouter({
             component: cssLight2
         },
         {
+            path: '/css3ImageAccordion',
+            name: 'css3ImageAccordion',
+            component: () =>
+            import( "@/components/testUI/css3ImageAccordion.vue")
+        },
+        {
 
             path: '/testMainPage',
             name: 'testMainPage',
