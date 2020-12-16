@@ -68,8 +68,7 @@
         <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
         <p>Click or drag files here to upload</p>
       </div>
-    </Upload>   
-    </div>
+    </Upload>
   </div>
 </template>
 
