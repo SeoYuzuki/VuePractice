@@ -1,34 +1,35 @@
 <template>
   <div class="hello">
-    <css3ImageComp> kaka </css3ImageComp>
-
-    yo:<slot />
+    <div>testPropsOrEmit2</div>
+    <Button @click="func0">t1</Button>
+    <Button @click="func2">t2</Button>
+    <Button @click="func3">t3</Button>
   </div>
 </template>
 
 <script>
-import css3ImageComp from "@/components/testUI/css3ImageComp.vue";
-//import Banner from "@/components/Banner.vue";
-
 export default {
-  components: { css3ImageComp },
+  components: {},
   props: {
-    showlist: null,
+    func0: Function,
   },
   data() {
-    return {
-      showlist2: this.showlist,
-    };
+    return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    func2() {
+      this.$emit("testemit", "123456");
+    },
+    func3() {
+      this.$emit("func0");
+    },
+  },
   watch: {},
   beforeCreate() {},
   created() {},
   beforeMount() {},
-  mounted() {
-    console.log(this.showlist2);
-  },
+  mounted() {},
   activated() {},
   deactivated() {},
   beforeUpdate() {},

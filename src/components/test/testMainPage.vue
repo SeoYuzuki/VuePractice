@@ -18,6 +18,16 @@
       <router-link to="/TestMainPage/testPathVal">testPathVal!</router-link>
     </div>
 
+    <div style="display: inline-block; margin: 0 10px">
+      <router-link to="/TestMainPage/testPropsOrEmit"
+        >Props or Emit</router-link
+      >
+    </div>
+
+    <div style="display: inline-block; margin: 0 10px">
+      <router-link to="/TestMainPage/testfunctionalComponent">test functional Component</router-link>
+    </div>
+
     <div>
       <div class="card">
         <router-view></router-view>
