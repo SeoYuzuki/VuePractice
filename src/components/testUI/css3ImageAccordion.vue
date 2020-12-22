@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <br />
     <css3ImageComp :items="showlist" :cheight="'480px'"> </css3ImageComp>
   </div>
 </template>
@@ -27,7 +28,11 @@ export default {
     };
   },
   computed: {},
-  methods: {},
+  methods: {
+    ff() {
+      console.log(this.showlist);
+    },
+  },
   watch: {},
   beforeCreate() {},
   created() {},

@@ -14,6 +14,7 @@ import testAxios from "@/components/test/testAxios.vue";
 import testComputed from "@/components/test/testComputed.vue";
 import testStore from "@/components/test/testStore.vue";
 import testPathVal from "@/components/test/testPathVal.vue";
+
 //測試UI設計
 import testImage from "@/components/testUI/testImage.vue";
 import testCSSLeave from "@/components/testUI/testCSSLeave.vue";
@@ -105,7 +106,7 @@ const router = new VueRouter({
             path: '/css3ImageAccordion',
             name: 'css3ImageAccordion',
             component: () =>
-            import( "@/components/testUI/css3ImageAccordion.vue")
+                import("@/components/testUI/css3ImageAccordion.vue")
         },
         {
 
@@ -133,8 +134,19 @@ const router = new VueRouter({
                 name: 'testPathVal',
                 component: testPathVal
             },
+            {
+                path: 'testPropsOrEmit',
+                name: 'testPropsOrEmit',
+                component: () =>
+                    import("@/components/test/testPropsOrEmit.vue")
+            },
+            {
+                path: 'testfunctionalComponent',
+                name: 'testfunctionalComponent',
+                component: () =>
+                    import("@/components/test/testfunctionalComponent.vue")
 
-
+            }
             ],
         },
         {
