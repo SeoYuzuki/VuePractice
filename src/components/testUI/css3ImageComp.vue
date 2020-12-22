@@ -13,9 +13,8 @@ export default {
   },
   methods: {
     old2new(h, oddele, i) {
-      // console.log(i);
       let img = h("img", {
-        attrs: { src: this.itemstemp[i].src },
+        attrs: { src: require("@/assets/" + this.itemstemp[i].src) },
       });
       let input;
       if (i == this.items.length - 1) {

@@ -24,11 +24,10 @@ import testIV02 from "@/components/testUI/testIV02.vue";
 import cssLight2 from "@/components/testUI/cssLight2.vue";
 
 // cbp2
-import t1 from "@/components/cbp2/t1.vue";
-import t3get from "@/components/cbp2/t3get.vue";
-import t3list from "@/components/cbp2/t3list.vue";
-import t1newtable from "@/components/cbp2/t1newtable.vue";
-import apiList from "@/components/cbp2/apiList.vue";
+import t1 from "@/components/tabletest/t1.vue";
+
+import t1newtable from "@/components/tabletest/t1newtable.vue";
+import apiList from "@/components/tabletest/apiList.vue";
 
 // 首頁
 import homePage from "@/components/homePage.vue";
@@ -154,16 +153,7 @@ const router = new VueRouter({
             name: 't1',
             component: t1
         },
-        {
-            path: '/t3get',
-            name: 't3get',
-            component: t3get
-        },
-        {
-            path: '/t3list',
-            name: 't3list',
-            component: t3list
-        },
+
         {
             path: '/t1newtable',
             name: 't1newtable',
